@@ -1,12 +1,14 @@
-import express from 'express'
-const route = express.Router()
+import { Router } from 'express'
+import { listMusic, deleteMusic, index, createMusic } from '../controllers/spotifyController'
 
-route.use('/',(req,res)=>{
-    res.render('index')
-})
+const routes = Router()
 
-route.use('/K',(req,res)=>{
-    res.send("PAGINA k")
-})
+routes.get('/', listMusic)
 
-export default route
+routes.get('/create', createMusic)
+
+routes.post('/deletar', deleteMusic)
+
+routes.use(index)
+
+export default routes
