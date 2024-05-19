@@ -1,22 +1,24 @@
-import express from 'express'
-import path from 'path'
-import connectMongo from './config/mongoConnection'
-import handlebarsConfig from './config/handlebarsConfig'
-import spotifyRoutes from './routes/spotifyRoutes'
+import express from "express";
+import path from "path";
+import handlebarsConfig from "./config/handlebarsConfig";
+import connectMongo from "./config/mongoConnection";
+import spotifyRoutes from "./routes/spotifyRoutes";
 
-const app = express()
-app.use(express.static(path.join(__dirname, '/public')))
-app.use(express.urlencoded({ extended: true }))
+const app = express();
+app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.urlencoded({ extended: true }));
+
+//Add comment test
 
 // CONFIGURACAO DO HANDLEBARS
-handlebarsConfig(app)
+handlebarsConfig(app);
 
 // USO DE ROTAS
-app.use('/', spotifyRoutes)
+app.use("/", spotifyRoutes);
 
 // CONFIGURANDO MONGODB
-connectMongo()
+connectMongo();
 
 app.listen(8081, () => {
-  console.log('Servidor iniciado...')
-})
+  console.log("Servidor iniciado...");
+});
