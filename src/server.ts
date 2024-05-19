@@ -9,6 +9,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.urlencoded({ extended: true }));
 
 //Add comment test 2
+//ESTOU NA BRANCH 2
 
 // CONFIGURACAO DO HANDLEBARS
 handlebarsConfig(app);
