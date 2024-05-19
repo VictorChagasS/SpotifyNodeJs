@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //Add comment test 2
 //ESTOU NA BRANCH 233
+//gitpull
 
 // CONFIGURACAO DO HANDLEBARS
 handlebarsConfig(app);
